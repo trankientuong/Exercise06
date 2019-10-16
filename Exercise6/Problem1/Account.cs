@@ -8,20 +8,23 @@ namespace Problem1
 {
     public class Account
     {
-        private int Total;
+        public int Total;
         public Account(int amount)
         {
             Total = amount;
         }
 
         public void Deposit(int amount)
-        {
-            Total = Total + amount;
+        {          
+            Total += amount;
         }
 
         public void WithDraw(int amount)
         {
-            Total = Total - amount;
+            if (amount < Total)
+                Total -= amount;
+            else
+                Console.WriteLine("tai khoan khong du so tien de rut ");
         }
 
         public int Balance()
